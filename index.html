@@ -270,10 +270,13 @@
       애플워치를 맥의 무선 미니 모니터로.<br>
       가상 디스플레이에 띄운 시계·뽀모도로·미디어 컨트롤이 손목에서 30fps로.
     </p>
-    <a href="https://github.com/Gojaehyeon/watchmac" class="cta">
-      GitHub에서 보기 →
+    <a href="https://github.com/Gojaehyeon/watchmac/releases/download/v1.0.0/watchmac.dmg" class="cta">
+      ⬇ watchmac.dmg 다운로드
     </a>
-    <a href="#install" class="cta secondary">설치 방법</a>
+    <a href="https://github.com/Gojaehyeon/watchmac" class="cta secondary">GitHub</a>
+    <p style="margin-top:16px; font-size:13px; color:var(--dim);">
+      macOS 14+ · 무료 · 오픈소스 · Apple 공증 완료 &nbsp;·&nbsp; 워치 앱은 Xcode 로 직접 빌드
+    </p>
   </div>
 </div>
 
@@ -338,49 +341,63 @@
 
 <section id="install">
   <div class="container">
-    <h2>설치</h2>
-    <p class="lede">맥쪽 메뉴바 앱 + 워치쪽 네이티브 앱, 두 갈래입니다.</p>
+    <h2>설치 — 맥</h2>
+    <p class="lede">Apple 공증된 DMG. 받아서 드래그하면 끝. 빌드도, Gatekeeper 우회도 필요 없습니다.</p>
 
     <div class="steps">
       <div class="step">
         <div class="step-num">1</div>
         <div>
-          <h3>레포 클론</h3>
-          <p>최신 코드 받아옵니다.</p>
-<pre><span class="c"># 어디든</span>
-git clone https://github.com/Gojaehyeon/watchmac.git
-cd watchmac</pre>
+          <h3>DMG 다운로드 & 설치</h3>
+          <p><a href="https://github.com/Gojaehyeon/watchmac/releases/download/v1.0.0/watchmac.dmg" style="color:var(--accent); text-decoration:none;">watchmac.dmg</a> 를 열어서 watchmac 를 Applications 폴더로 드래그.</p>
         </div>
       </div>
 
       <div class="step">
         <div class="step-num">2</div>
         <div>
-          <h3>맥 앱 빌드</h3>
-          <p>Xcode 16 이상. 처음 실행하면 화면 기록 권한 요청.</p>
-<pre>cd mac
-./build-app.sh
-open watchmac.app</pre>
+          <h3>더블클릭으로 실행</h3>
+          <p>Apple 공증(notarized)된 앱이라 경고 없이 바로 열립니다. 메뉴바에 watchmac 아이콘 등장.</p>
         </div>
       </div>
 
       <div class="step">
         <div class="step-num">3</div>
         <div>
-          <h3>워치 앱 빌드</h3>
-          <p>xcodegen + Xcode. 본인 Apple ID로 서명해서 페어 폰 통해 워치 배포.</p>
-<pre>cd ../watch
+          <h3>화면 기록 권한</h3>
+          <p>메뉴바 아이콘 클릭 → 권한 요청 시 <strong style="color:var(--fg);">시스템 설정 → 개인정보 보호 및 보안 → 화면 기록</strong> 에서 watchmac 켜고, 한 번 종료 후 재실행.</p>
+        </div>
+      </div>
+    </div>
+
+    <h2 style="margin-top:64px;">설치 — 애플워치</h2>
+    <p class="lede">워치 앱은 App Store 미배포라 Xcode 로 직접 빌드합니다 (무료 Apple ID).</p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div>
+          <h3>레포 클론 & 프로젝트 생성</h3>
+<pre>git clone https://github.com/Gojaehyeon/watchmac.git
+cd watchmac/watch
 xcodegen generate
-open WatchMac.xcodeproj
-<span class="c"># Xcode에서 ⌘R</span></pre>
+open WatchMac.xcodeproj</pre>
         </div>
       </div>
 
       <div class="step">
-        <div class="step-num">4</div>
+        <div class="step-num">2</div>
+        <div>
+          <h3>서명 & 실행</h3>
+          <p>TARGETS → Signing 에서 본인 Apple ID 선택 → 페어 아이폰 연결 → <span style="font-family:monospace;">⌘R</span> (폰 통해 워치로 배포).</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">3</div>
         <div>
           <h3>주소 입력</h3>
-          <p>워치 앱 첫 실행 시 가운데 탭 → 맥 메뉴바의 LAN 주소 입력 → 연결.</p>
+          <p>워치 앱 가운데 탭 → 맥 메뉴바의 "주소 복사" 한 LAN 주소 입력 → 연결.</p>
 <pre><span class="c"># 예시</span>
 192.168.0.10:8890</pre>
         </div>

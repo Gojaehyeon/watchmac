@@ -31,12 +31,21 @@
 
 ## 설치 — 맥 메뉴바 앱
 
+### 방법 A — DMG (권장)
+
+[**watchmac.dmg 다운로드**](https://github.com/Gojaehyeon/watchmac/releases/latest) → 열어서 Applications 폴더로 드래그.
+
+Developer ID 서명 + Apple 공증(notarized)된 앱이라 **더블클릭으로 바로 실행**됩니다. Gatekeeper 우회 불필요.
+
+### 방법 B — 직접 빌드
+
 ```bash
 cd mac
-./build-app.sh
+./build-app.sh          # watchmac.app 생성
+./make-dmg.sh           # (선택) watchmac.dmg 생성 + 서명 + 공증
 ```
 
-`watchmac.app` 이 생기면 더블클릭. 메뉴바에 워치 아이콘이 뜨고, 첫 실행 시 화면 기록 권한 요청. 권한 켠 뒤 한 번 종료하고 다시 여세요.
+첫 실행 시 화면 기록 권한 요청. 권한 켠 뒤 한 번 종료하고 다시 여세요.
 
 메뉴에서:
 - 상태 (켜짐/꺼짐) · 보는 사람 수

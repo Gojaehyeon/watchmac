@@ -6,6 +6,7 @@ Package.resolved
 
 # macOS app artifacts
 mac/watchmac.app/
+mac/watchmac.dmg
 
 # Xcode user data
 xcuserdata/
@@ -25,3 +26,4 @@ watch/Info.plist
 
 # OMC runtime state
 .omc/
+.vercel
