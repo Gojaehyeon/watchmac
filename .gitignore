@@ -1,0 +1,27 @@
+# Swift Package Manager
+.build/
+.swiftpm/
+Package.resolved
+*.xcodeproj/
+
+# macOS app artifacts
+mac/watchmac.app/
+
+# Xcode user data
+xcuserdata/
+*.xcworkspace/
+*.xcuserstate
+DerivedData/
+
+# Auto-generated Info.plist (xcodegen)
+watch/Info.plist
+
+# macOS
+.DS_Store
+
+# Editor
+.vscode/
+.idea/
+
+# OMC runtime state
+.omc/

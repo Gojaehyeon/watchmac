@@ -1,0 +1,34 @@
+name: WatchMac
+options:
+  bundleIdPrefix: com.watchmac
+  deploymentTarget:
+    watchOS: "10.0"
+  createIntermediateGroups: true
+targets:
+  WatchMac:
+    type: application
+    platform: watchOS
+    sources:
+      - path: App
+    info:
+      path: Info.plist
+      properties:
+        CFBundleDisplayName: watchmac
+        CFBundleShortVersionString: "1.0"
+        CFBundleVersion: "1"
+        WKApplication: true
+        WKWatchOnly: true
+        NSLocalNetworkUsageDescription: "같은 Wi-Fi 안의 맥에서 watchmac 스트림을 받기 위해 로컬 네트워크에 접속합니다."
+        NSAppTransportSecurity:
+          NSAllowsArbitraryLoads: true
+          NSAllowsLocalNetworking: true
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: false
+    settings:
+      base:
+        TARGETED_DEVICE_FAMILY: "4"
+        PRODUCT_BUNDLE_IDENTIFIER: com.watchmac.watch
+        CODE_SIGN_STYLE: Automatic
+        ENABLE_PREVIEWS: "YES"
+        SWIFT_VERSION: "5.0"
+        GENERATE_INFOPLIST_FILE: "NO"
